@@ -1,17 +1,31 @@
 public class Calculator {
-    public int add(int a, int b){
-        //TODO inser your realisation in method add
+
+    /** Возвращает сумму a и b. */
+    public int add(int a, int b) {
+        return a + b;
     }
-    public int dif(int a, int b){
-        //TODO inser your realisation in method dif
+
+    /** Возвращает разность a и b (a - b). */
+    public int dif(int a, int b) {
+        return a - b;
     }
-    public int div(int a, int b){
-        //TODO inser your realisation in method div
+
+    /** Возвращает целую часть от деления a на b. Деление на ноль запрещено. */
+    public int div(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Деление на ноль");
+        }
+        return a / b;
     }
-    public int times(int a, int b){
-        //TODO inser your realisation in method times
+
+    /** Возвращает произведение a и b. */
+    public int times(int a, int b) {
+        return a * b;
     }
-    public int solver(){
-        //TODO inser your realisation in method solver
+
+    /** Вычисляет значение выражения (a + b) * c - d / e, используя методы выше. */
+    public int solver() {
+        int a = 6, b = 4, c = 3, d = 20, e = 5;
+        return dif(times(add(a, b), c), div(d, e));
     }
 }
